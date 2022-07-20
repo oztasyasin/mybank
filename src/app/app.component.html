@@ -1,3 +1,23 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <ion-menu side="start" menuId="main" contentId="main">
+    <ion-header>
+      <ion-menu-toggle>
+        <div class="menuHeaderFrame">
+          <ion-icon (click)="logOut()" name="person" class="personIcon"></ion-icon>
+          <ion-label class="userText">{{userName}}</ion-label>
+        </div>
+      </ion-menu-toggle>
+    </ion-header>
+    <ion-content>
+      <div style="margin-top: 5px;display: flex;gap:5px;flex-direction: column;background-color: transparent;">
+        <ion-menu-toggle *ngFor="let item of items" routerLink="{{item.page}}">
+          <ion-item lines="none" button detail="false">
+            <ion-icon name="{{item.icon}}" slot="start"></ion-icon>
+            <ion-label>{{item.title}}</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+      </div>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet id="main"></ion-router-outlet>
 </ion-app>
