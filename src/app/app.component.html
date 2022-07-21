@@ -10,7 +10,7 @@
     </ion-header>
     <ion-content>
       <div style="margin-top: 5px;display: flex;gap:5px;flex-direction: column;background-color: transparent;">
-        <ion-menu-toggle *ngFor="let item of items" routerLink="{{item.page}}">
+        <ion-menu-toggle *ngFor="let item of items" (click)="menuClick(item)" routerLink="{{item.page}}">
           <ion-item lines="none" button detail="false">
             <ion-icon name="{{item.icon}}" slot="start"></ion-icon>
             <ion-label>{{item.title}}</ion-label>

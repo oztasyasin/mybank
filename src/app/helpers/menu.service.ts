@@ -9,37 +9,37 @@ export class MenuService {
       title:'Kayıtlı İşlemler',
       icon: 'albums',
       selected: false,
-      page: 'home/islemler',
+      page: '/home/tabs/islemler',
     },
     {
       title:'Kartlarım',
       icon:'card',
       selected: false,
-      page:'home/kartlar',
+      page:'/home/tabs/kartlar',
     },
     {
       title:'Raporlar',
       icon:'reader',
       selected: false,
-      page:'home/raporlar',
+      page:'/home/tabs/raporlar',
     },
     {
       title:'Borçlar',
       icon:'id-card',
       selected: false,
-      page:'home/borclar',
+      page:'/home/tabs/borclar',
     },
     {
       title:'Hedefler',
       icon:'cash',
       selected: false,
-      page:'home/hedefler',
+      page:'/home/tabs/hedefler',
     },
     {
       title:'İstatistikler',
       icon:'trending-up',
       selected: false,
-      page:'home/istatistik',
+      page:'/home/tabs/istatistik',
     }
   ]
   constructor() { }

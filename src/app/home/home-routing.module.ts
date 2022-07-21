@@ -4,7 +4,7 @@ import { HomePage } from './home.page';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'tabs',
     component: HomePage,
     children:[
       {
@@ -33,6 +33,11 @@ const routes: Routes = [
       }
     ]
   },
+  {
+    path: '',
+    redirectTo: '/home/tabs/islemler',
+    pathMatch: 'full'
+  }
   
 ];
 

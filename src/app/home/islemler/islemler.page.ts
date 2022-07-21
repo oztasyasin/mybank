@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BaseService } from 'src/app/helpers/base.service';
 
 @Component({
   selector: 'app-islemler',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IslemlerPage implements OnInit {
 
-  constructor() { }
-
+  constructor(private baseService:BaseService) { }
+  islemler=[];
   ngOnInit() {
+    this.islemler = this.baseService.getIslemler();
   }
 
 }

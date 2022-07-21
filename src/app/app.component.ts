@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { BaseService } from './helpers/base.service';
 import { MenuService } from './helpers/menu.service';
 import { AuthService } from './services/auth.service';
 
@@ -15,7 +16,7 @@ export class AppComponent {
     Password:"",
   }
   items=[];
-  constructor(private service:AuthService,private router:Router,private menuservice:MenuService) {
+  constructor(private service:AuthService,private router:Router,private menuservice:MenuService, private baseService:BaseService) {
     this.items = menuservice.getMenuItems();
   }
   logOut(){
@@ -27,7 +28,9 @@ export class AppComponent {
     localStorage.setItem("rememberMe","false");
     this.router.navigate(['login']);
   }
-  menuToggle(item:any){
-    this.router.navigateByUrl('/home/'+item.page);
+  menuClick(item:any){
+    let name = item.title;
+    this.baseService.setHeaderName(name)    
+    
   }
 }
